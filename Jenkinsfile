@@ -9,12 +9,12 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'mvn clean compile'
+                bat 'mvn clean compile'
             }
         }
         stage('Static Analysis (Checkstyle)') {
             steps {
-                sh 'mvn checkstyle:checkstyle'
+                bat 'mvn checkstyle:checkstyle'
             }
             post {
                 always {
@@ -24,7 +24,7 @@ pipeline {
         }
         stage('Test and Coverage (JaCoCo)') {
             steps {
-                sh 'mvn test jacoco:report'
+                bat 'mvn test jacoco:report'
             }
             post {
                 always {
@@ -34,7 +34,7 @@ pipeline {
         }
         stage('Generate Site') {
             steps {
-                sh 'mvn site'
+                bat 'mvn site'
             }
         }
     }
