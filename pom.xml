@@ -60,6 +60,28 @@
         </executions>
       </plugin>
 
+      <!-- Plugin Checkstyle para análisis estático -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <version>3.1.2</version>
+        <executions>
+          <execution>
+            <id>checkstyle-validation</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>checkstyle</goal>
+              <goal>checkstyle-report</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <outputFileFormat>xml</outputFileFormat>
+          <outputFile>target/checkstyle-result.xml</outputFile>
+          <failsOnError>false</failsOnError>
+        </configuration>
+      </plugin>
+
       <!-- Otros plugins (compilación, limpieza, etc.) -->
       <plugin>
         <artifactId>maven-clean-plugin</artifactId>
