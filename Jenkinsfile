@@ -27,6 +27,12 @@ pipeline {
                 bat 'mvn test jacoco:report'
             }
             post {
+                success {
+                    echo 'Tests pasaron correctamente'
+                }
+                failure {
+                    error 'Tests fallaron, abortando pipeline'
+                }
                 always {
                     jacoco(execPattern: '**/target/*.exec', classPattern: '**/target/classes', sourcePattern: '**/src/main/java')
                 }
