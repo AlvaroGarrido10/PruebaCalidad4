@@ -1,4 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: com.practica.CalculadoraTest
 -------------------------------------------------------------------------------
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 s - in com.practica.CalculadoraTest
+Tests run: 5, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.046 s <<< FAILURE! - in com.practica.CalculadoraTest
+testSumar(com.practica.CalculadoraTest)  Time elapsed: 0.006 s  <<< FAILURE!
+java.lang.AssertionError: expected:<8> but was:<9>
+	at com.practica.CalculadoraTest.testSumar(CalculadoraTest.java:11)
+
